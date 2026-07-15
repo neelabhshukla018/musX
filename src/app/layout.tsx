@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 
 import { inter, jetbrainsMono, spaceGrotesk } from "@/lib/font";
+
 import ThemeProvider from "@/providers/ThemeProvider";
+import ToastProvider from "@/providers/ToastProvider";
 
 import "./globals.css";
 
@@ -9,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://musx.app"),
 
   title: {
-    default: "musX",
+    default: "mus-𝕏",
     template: "%s | musX",
   },
 
@@ -84,6 +86,8 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <div id="musx-root">{children}</div>
+
+          <ToastProvider />
         </ThemeProvider>
       </body>
     </html>

@@ -310,3 +310,155 @@ select {
     --sidebar-width: 0px;
   }
 }
+
+/* ==========================================================
+   musX Sonner Toast
+   ========================================================== */
+
+[data-sonner-toaster] {
+  --normal-bg: var(--surface) !important;
+  --normal-border: transparent !important;
+  --normal-text: var(--foreground) !important;
+
+  --success-bg: var(--surface) !important;
+  --success-border: transparent !important;
+  --success-text: var(--foreground) !important;
+
+  --error-bg: var(--surface) !important;
+  --error-border: transparent !important;
+  --error-text: var(--foreground) !important;
+
+  --warning-bg: var(--surface) !important;
+  --warning-border: transparent !important;
+  --warning-text: var(--foreground) !important;
+
+  --info-bg: var(--surface) !important;
+  --info-border: transparent !important;
+  --info-text: var(--foreground) !important;
+}
+
+[data-sonner-toast] {
+  position: relative;
+
+  background: var(--surface) !important;
+  color: var(--foreground) !important;
+
+  border: none !important;
+
+  border-radius: 22px !important;
+
+  padding: 16px 18px !important;
+
+  box-shadow:
+    -10px -10px 20px rgba(255,255,255,.85),
+     10px  10px 20px rgba(174,184,201,.35) !important;
+
+  overflow: hidden;
+
+  transition: all .25s ease;
+}
+
+.dark [data-sonner-toast] {
+  box-shadow:
+    -8px -8px 18px rgba(42,47,58,.45),
+     10px 10px 22px rgba(0,0,0,.45) !important;
+}
+
+/* Left Accent */
+
+[data-sonner-toast]::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 14%;
+  bottom: 14%;
+
+  width: 4px;
+
+  border-radius: 999px;
+
+  background: var(--primary);
+}
+
+/* Hover */
+
+[data-sonner-toast]:hover {
+  transform: translateY(-3px);
+}
+
+/* Title */
+
+[data-sonner-toast] [data-title] {
+  color: var(--foreground) !important;
+
+  font-family: var(--font-space-grotesk);
+
+  font-weight: 700;
+
+  font-size: 15px;
+}
+
+/* Description */
+
+[data-sonner-toast] [data-description] {
+  color: var(--text-secondary) !important;
+
+  font-family: var(--font-inter);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+/* Close Button */
+
+[data-sonner-toast] [data-close-button] {
+  background: var(--surface-secondary) !important;
+
+  color: var(--foreground) !important;
+
+  border: none !important;
+
+  border-radius: 999px !important;
+
+  width: 28px !important;
+  height: 28px !important;
+
+  transition: .2s;
+}
+
+[data-sonner-toast] [data-close-button]:hover {
+  background: var(--primary-soft) !important;
+}
+
+/* Success */
+
+[data-sonner-toast][data-type="success"]::before {
+  background: var(--success);
+}
+
+/* Error */
+
+[data-sonner-toast][data-type="error"]::before {
+  background: var(--danger);
+}
+
+/* Warning */
+
+[data-sonner-toast][data-type="warning"]::before {
+  background: var(--warning);
+}
+
+/* Info */
+
+[data-sonner-toast][data-type="info"]::before {
+  background: var(--primary);
+}
+
+/* Loading */
+
+[data-sonner-toast][data-type="loading"]::before {
+  background: var(--accent);
+}
