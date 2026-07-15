@@ -1,34 +1,52 @@
 import type { Metadata, Viewport } from "next";
-
-import { inter, jetbrainsMono, spaceGrotesk } from "@/lib/font";
-
-import ThemeProvider from "@/providers/ThemeProvider";
-import ToastProvider from "@/providers/ToastProvider";
+import {
+  Inter,
+  Space_Grotesk,
+  JetBrains_Mono,
+} from "next/font/google";
 
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://musx.app"),
 
   title: {
-    default: "mus-𝕏",
-    template: "%s | musX",
+    default: "mus𝕏",
+    template: "%s | mus𝕏",
   },
 
   description:
-    "musX is a premium AI-powered music platform that delivers mood-based playlists, intelligent recommendations, smart notifications, and a personalized listening experience.",
+    "mus𝕏 is a premium AI-powered music platform delivering intelligent recommendations, mood-based playlists, and a beautiful listening experience.",
 
-  applicationName: "musX",
+  applicationName: "mus𝕏",
 
   keywords: [
     "musX",
-    "music",
-    "music player",
-    "AI music",
-    "playlist",
-    "music streaming",
-    "mood playlist",
-    "AI assistant",
+    "AI Music",
+    "Music Streaming",
+    "Playlist",
+    "Songs",
+    "Music Player",
+    "Recommendations",
+    "Mood Music",
   ],
 
   authors: [
@@ -40,18 +58,18 @@ export const metadata: Metadata = {
   creator: "Neelabh Shukla",
 
   openGraph: {
-    title: "musX",
+    title: "mus𝕏",
     description:
-      "A premium AI-powered music experience built for every mood.",
-    siteName: "musX",
+      "Premium AI-powered music streaming platform.",
+    siteName: "mus𝕏",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "musX",
+    title: "mus𝕏",
     description:
-      "A premium AI-powered music experience built for every mood.",
+      "Premium AI-powered music streaming platform.",
   },
 
   icons: {
@@ -62,16 +80,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    {
-      media: "(prefers-color-scheme: light)",
-      color: "#F7F9FC",
-    },
-    {
-      media: "(prefers-color-scheme: dark)",
-      color: "#0F1115",
-    },
-  ],
+  themeColor: "#0F1115",
 };
 
 export default function RootLayout({
@@ -80,15 +89,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
       >
-        <ThemeProvider>
-          <div id="musx-root">{children}</div>
-
-          <ToastProvider />
-        </ThemeProvider>
+        <div id="musx-root">
+          {children}
+        </div>
       </body>
     </html>
   );
