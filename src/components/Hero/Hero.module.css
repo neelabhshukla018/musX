@@ -1,0 +1,1294 @@
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero{
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:2rem;
+
+    padding:24px 0 32px;
+}
+
+/* ==========================================================
+   HERO HEADER
+========================================================== */
+
+.heroHeader{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:2rem;
+}
+
+.heroHeaderLeft{
+
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:12px;
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.heroTitle{
+
+    margin:0;
+
+    font-size:clamp(2.3rem,4vw,3.4rem);
+
+    font-weight:800;
+
+    color:var(--text-primary);
+
+    line-height:1.05;
+
+    letter-spacing:-1px;
+}
+
+.userName{
+
+    color:var(--primary);
+}
+
+.wave{
+
+    margin-left:8px;
+}
+
+/* ==========================================================
+   SUBTITLE
+========================================================== */
+
+.heroSubtitle{
+
+    margin:0;
+
+    max-width:600px;
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+    color:var(--text-secondary);
+}
+
+/* ==========================================================
+   VIBE BUTTON
+========================================================== */
+
+.vibeButton{
+
+    display:flex;
+    align-items:center;
+
+    gap:16px;
+
+    padding:16px 22px;
+
+    min-width:260px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:24px;
+
+    background:var(--surface);
+
+    color:var(--text-primary);
+
+    box-shadow:var(--shadow-md);
+
+    transition:.35s;
+}
+
+.vibeButton:hover{
+
+    background:var(--surface-hover);
+
+    transform:translateY(-3px);
+}
+
+.vibeIcon{
+
+    width:52px;
+    height:52px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        145deg,
+        #4F8CFF,
+        #74A8FF
+    );
+
+    color:white;
+
+    box-shadow:
+        0 10px 20px rgba(79,140,255,.25);
+}
+
+.vibeContent{
+
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+
+    text-align:left;
+}
+
+.vibeLabel{
+
+    font-size:.82rem;
+
+    color:var(--text-muted);
+}
+
+.vibeValue{
+
+    margin-top:3px;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.heroGrid{
+
+    display:grid;
+
+    grid-template-columns:2fr 360px;
+
+    gap:24px;
+}
+
+.heroLeft{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:24px;
+}
+
+.heroRight{
+
+    display:flex;
+}/* ==========================================================
+   MOOD SECTION
+========================================================== */
+
+.moodSection{
+    display:flex;
+    flex-direction:column;
+
+    gap:1.5rem;
+}
+
+/* ==========================================================
+   MOOD GRID
+========================================================== */
+
+.moodGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:18px;
+}
+
+/* ==========================================================
+   MOOD CARD
+========================================================== */
+
+.moodCard{
+
+    --mood-color:#4F8CFF;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:16px;
+
+    padding:22px 18px;
+
+    cursor:pointer;
+
+    border:none;
+
+    border-radius:24px;
+
+    background:var(--surface);
+
+    transition:.35s ease;
+
+    box-shadow:var(--shadow-md);
+
+    text-align:left;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.moodCard:hover{
+
+    transform:
+    translateY(-6px);
+
+    background:var(--surface-hover);
+
+    box-shadow:
+        0 14px 28px rgba(0,0,0,.08);
+}
+
+/* ==========================================================
+   TOP ACCENT
+========================================================== */
+
+.moodCard::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:var(--mood-color);
+}
+
+/* ==========================================================
+   ICON
+========================================================== */
+
+.moodIcon{
+
+    width:58px;
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:rgba(79,140,255,.10);
+
+    color:var(--mood-color);
+
+    transition:.3s;
+}
+
+.moodCard:hover .moodIcon{
+
+    background:var(--mood-color);
+
+    color:white;
+
+    transform:scale(1.08);
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.moodContent{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+}
+
+.moodTitle{
+
+    margin:0;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+}
+
+.moodSubtitle{
+
+    margin:0;
+
+    font-size:.82rem;
+
+    line-height:1.5;
+
+    color:var(--text-secondary);
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:1200px){
+
+    .moodGrid{
+
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media (max-width:992px){
+
+    .moodGrid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media (max-width:576px){
+
+    .moodGrid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:12px;
+    }
+
+    .moodCard{
+
+        padding:16px;
+    }
+
+    .moodIcon{
+
+        width:48px;
+        height:48px;
+
+        border-radius:14px;
+    }
+
+    .moodTitle{
+
+        font-size:.95rem;
+    }
+
+    .moodSubtitle{
+
+        font-size:.75rem;
+    }
+
+}/* ==========================================================
+   CONTINUE LISTENING
+========================================================== */
+
+.continueSection{
+    display:flex;
+    flex-direction:column;
+
+    gap:1.5rem;
+}
+
+/* ==========================================================
+   SECTION HEADER
+========================================================== */
+
+.sectionHeader{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:1rem;
+}
+
+.sectionTitle{
+
+    margin:0;
+
+    font-size:1.45rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+}
+
+.sectionSubtitle{
+
+    margin-top:4px;
+
+    color:var(--text-secondary);
+
+    font-size:.9rem;
+}
+
+/* ==========================================================
+   VIEW ALL BUTTON
+========================================================== */
+
+.viewAllButton{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    padding:12px 18px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:16px;
+
+    background:var(--surface);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:.3s;
+}
+
+.viewAllButton:hover{
+
+    background:var(--surface-hover);
+
+    transform:translateY(-2px);
+}
+
+/* ==========================================================
+   SONG GRID
+========================================================== */
+
+.songGrid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+/* ==========================================================
+   SONG CARD
+========================================================== */
+
+.songCard{
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:var(--surface-elevated);
+
+    transition:.35s;
+
+    box-shadow:var(--shadow-md);
+
+    border:1px solid var(--border);
+}
+
+.songCard:hover{
+
+    transform:
+    translateY(-8px);
+
+    background:white;
+}
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.songImageWrapper{
+
+    position:relative;
+
+    aspect-ratio:1;
+
+    overflow:hidden;
+}
+
+.songImage{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.45s;
+}
+
+.songCard:hover .songImage{
+
+    transform:scale(1.08);
+}
+
+/* ==========================================================
+   IMAGE OVERLAY
+========================================================== */
+
+.songOverlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.08)
+    );
+
+    opacity:0;
+
+    transition:.35s;
+}
+
+.songCard:hover .songOverlay{
+
+    opacity:1;
+}
+
+/* ==========================================================
+   PLAY BUTTON
+========================================================== */
+
+.playButton{
+
+    width:64px;
+    height:64px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:var(--primary);
+
+    box-shadow:
+
+        0 12px 25px rgba(0,0,0,.18);
+
+    transform:scale(.85);
+
+    transition:.3s;
+}
+
+.songCard:hover .playButton{
+
+    transform:scale(1);
+}
+
+.playButton:hover{
+
+    transform:scale(1.08);
+}
+
+/* ==========================================================
+   SONG INFO
+========================================================== */
+
+.songInfo{
+
+    padding:18px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
+}
+
+.songTitle{
+
+    margin:0;
+
+    font-size:1.05rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+    line-height:1.3;
+}
+
+.songArtist{
+
+    margin:0;
+
+    color:var(--text-secondary);
+
+    font-size:.9rem;
+}
+
+/* ==========================================================
+   SONG FOOTER
+========================================================== */
+
+.songFooter{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.songDuration{
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    font-size:.82rem;
+
+    color:var(--text-muted);
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:1200px){
+
+    .songGrid{
+
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+
+}
+
+@media (max-width:992px){
+
+    .songGrid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+@media (max-width:576px){
+
+    .songGrid{
+
+        grid-template-columns:1fr;
+
+        gap:16px;
+    }
+
+    .songInfo{
+
+        padding:16px;
+    }
+
+    .playButton{
+
+        width:56px;
+        height:56px;
+    }
+
+}/* ==========================================================
+   HERO GRID
+========================================================== */
+
+.heroGrid{
+
+    display:grid;
+
+    grid-template-columns:
+    minmax(0,2fr)
+    340px;
+
+    gap:24px;
+
+    align-items:start;
+}
+
+.heroLeft{
+
+    min-width:0;
+}
+
+.heroRight{
+
+    display:flex;
+}
+
+/* ==========================================================
+   AI CARD
+========================================================== */
+
+.aiCard{
+
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:24px;
+
+    width:100%;
+
+    min-height:420px;
+
+    padding:28px;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    background:linear-gradient(
+        145deg,
+        #FFFFFF,
+        #F7F9FC
+    );
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-md);
+}
+
+/* ==========================================================
+   AI GLOW
+========================================================== */
+
+.aiGlow{
+
+    position:absolute;
+
+    right:-80px;
+    top:-80px;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(79,140,255,.15),
+        transparent 70%
+    );
+
+    pointer-events:none;
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.aiHeader{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    z-index:2;
+}
+
+.aiIcon{
+
+    width:52px;
+    height:52px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        145deg,
+        #4F8CFF,
+        #73A7FF
+    );
+
+    color:white;
+
+    box-shadow:
+
+        0 12px 25px
+        rgba(79,140,255,.25);
+}
+
+.aiBadge{
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    letter-spacing:.4px;
+
+    color:var(--primary);
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.aiContent{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    z-index:2;
+}
+
+.aiTitle{
+
+    margin:0;
+
+    font-size:1.8rem;
+
+    font-weight:800;
+
+    line-height:1.3;
+
+    color:var(--text-primary);
+}
+
+.aiDescription{
+
+    margin:0;
+
+    line-height:1.8;
+
+    color:var(--text-secondary);
+
+    font-size:.95rem;
+}
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+.aiButton{
+
+    margin-top:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        145deg,
+        #4F8CFF,
+        #73A7FF
+    );
+
+    color:white;
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    transition:.3s;
+
+    box-shadow:
+
+        0 12px 24px
+        rgba(79,140,255,.20);
+}
+
+.aiButton:hover{
+
+    transform:
+    translateY(-2px);
+
+    box-shadow:
+
+        0 18px 32px
+        rgba(79,140,255,.28);
+}
+
+/* ==========================================================
+   FLOATING CIRCLES
+========================================================== */
+
+.aiCard::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    right:-20px;
+    bottom:70px;
+
+    background:
+
+    rgba(79,140,255,.05);
+}
+
+.aiCard::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    left:25px;
+    bottom:25px;
+
+    background:
+
+    rgba(79,140,255,.08);
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:1400px){
+
+    .heroGrid{
+
+        grid-template-columns:
+        minmax(0,1.8fr)
+        320px;
+    }
+
+}
+
+@media (max-width:1200px){
+
+    .heroGrid{
+
+        grid-template-columns:1fr;
+    }
+
+    .heroRight{
+
+        width:100%;
+    }
+
+    .aiCard{
+
+        min-height:320px;
+    }
+
+}
+
+@media (max-width:992px){
+
+    .hero{
+
+        gap:28px;
+    }
+
+    .heroHeader{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    .vibeButton{
+
+        width:100%;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hero{
+
+        padding:16px 0 28px;
+    }
+
+    .heroTitle{
+
+        font-size:2.1rem;
+    }
+
+    .heroSubtitle{
+
+        font-size:.95rem;
+    }
+
+    .sectionHeader{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:12px;
+    }
+
+    .viewAllButton{
+
+        width:100%;
+
+        justify-content:center;
+    }
+
+}
+
+@media (max-width:576px){
+
+    .hero{
+
+        gap:22px;
+    }
+
+    .heroTitle{
+
+        font-size:1.75rem;
+    }
+
+    .heroSubtitle{
+
+        font-size:.9rem;
+
+        line-height:1.6;
+    }
+
+    .vibeButton{
+
+        width:100%;
+
+        min-width:100%;
+    }
+
+    .aiCard{
+
+        padding:22px;
+
+        min-height:auto;
+    }
+
+    .aiTitle{
+
+        font-size:1.45rem;
+    }
+
+}
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(24px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:
+        translateY(0);
+    }
+
+    50%{
+
+        transform:
+        translateY(-6px);
+    }
+
+    100%{
+
+        transform:
+        translateY(0);
+    }
+
+}
+
+/* ==========================================================
+   ENTRY ANIMATIONS
+========================================================== */
+
+.heroHeader{
+
+    animation:
+    fadeUp .45s ease both;
+}
+
+.moodSection{
+
+    animation:
+    fadeUp .6s ease both;
+}
+
+.continueSection{
+
+    animation:
+    fadeUp .75s ease both;
+}
+
+.aiCard{
+
+    animation:
+    fadeUp .9s ease both,
+    float 6s ease-in-out infinite;
+}
+
+/* ==========================================================
+   GLOBAL TRANSITIONS
+========================================================== */
+
+.hero *{
+
+    transition:
+
+        background-color .25s ease,
+
+        color .25s ease,
+
+        border-color .25s ease,
+
+        box-shadow .25s ease,
+
+        transform .25s ease;
+}
+
+/* ==========================================================
+   CUSTOM SCROLLBAR
+========================================================== */
+
+.songGrid::-webkit-scrollbar{
+
+    height:8px;
+}
+
+.songGrid::-webkit-scrollbar-thumb{
+
+    background:#C7CBD3;
+
+    border-radius:999px;
+}
+
+.songGrid::-webkit-scrollbar-track{
+
+    background:transparent;
+}
+
+/* ==========================================================
+   TEXT SELECTION
+========================================================== */
+
+.hero ::selection{
+
+    background:#4F8CFF;
+
+    color:#ffffff;
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+button:focus-visible{
+
+    outline:3px solid rgba(79,140,255,.25);
+
+    outline-offset:3px;
+}
+
+/* ==========================================================
+   HOVER POLISH
+========================================================== */
+
+.songCard:hover{
+
+    z-index:2;
+}
+
+.moodCard:hover{
+
+    z-index:2;
+}
+
+.aiCard:hover{
+
+    box-shadow:
+
+        0 20px 40px rgba(15,23,42,.10),
+
+        var(--shadow-md);
+}

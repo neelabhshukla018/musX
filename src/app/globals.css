@@ -15,15 +15,15 @@
    Colors
 =============================== */
 
---background: #E5E5E7;
+--background: #D4D9E1;
 
---surface: #F1F2F4;
+  --surface: #E5E9EF;
 
---surface-secondary: #E5E7EB;
+  --surface-secondary: #DBE0E8;
 
---surface-hover: #D9DCE2;
+  --surface-hover: #D2D8E1;
 
---surface-elevated: #F8F9FA;
+  --surface-elevated: #F3F5F8;
   /* ===============================
       Typography
   =============================== */
@@ -137,9 +137,31 @@ html{
 }
 
 body{
+
   min-height:100vh;
 
-  background:var(--background);
+  background:
+
+    radial-gradient(
+      circle at top left,
+      rgba(86,162,118,.08),
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at top right,
+      rgba(79,140,255,.06),
+      transparent 40%
+    ),
+
+    linear-gradient(
+      180deg,
+      #E9EDF3 0%,
+      #DDE2EA 50%,
+      #D4D9E1 100%
+    );
+
+  background-attachment:fixed;
 
   color:var(--foreground);
 
@@ -150,8 +172,9 @@ body{
   -webkit-font-smoothing:antialiased;
 
   transition:
-  background var(--transition-normal),
-  color var(--transition-normal);
+    background var(--transition-normal),
+    color var(--transition-normal);
+
 }
 
 img,
