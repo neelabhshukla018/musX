@@ -3,101 +3,110 @@
 /* ==========================================================
    mus𝕏 Design System v2.0
    ========================================================== */
-
 :root {
-  color-scheme: light;
-  
-/* ===============================
-   Colors
-=============================== */
+  color-scheme: dark;
 
-/* ===============================
-   Colors
-=============================== */
-
---background: #D4D9E1;
-
-  --surface: #E5E9EF;
-
-  --surface-secondary: #DBE0E8;
-
-  --surface-hover: #D2D8E1;
-
-  --surface-elevated: #F3F5F8;
   /* ===============================
-      Typography
+     Backgrounds
   =============================== */
 
-  --foreground: #101623;
+  --background: #090C11;
 
-  --text-primary: #101623;
+  --surface: #131922;
 
-  --text-secondary: #5f6b7a;
+  --surface-secondary: #1A212C;
 
-  --text-muted: #baacac;
+  --surface-hover: #222B38;
+
+  --surface-elevated: #2A3442;
 
   /* ===============================
-      Borders
+     Typography
   =============================== */
 
-  --border: #3a475a;
+  --foreground: #F5F8FC;
 
-  --border-light: #edf2f8;
+  --text-primary: #F5F8FC;
+
+  --text-secondary: #C3CBD8;
+
+  --text-muted: #7E899A;
 
   /* ===============================
-      Brand
+     Borders
   =============================== */
 
-  --primary: #56a276;
+  --border: rgba(255,255,255,.08);
 
-  --primary-hover: #23c8da;
-
-  --primary-soft: rgba(31, 193, 211, 0.12);
+  --border-light: rgba(255,255,255,.03);
 
   /* ===============================
-      Accent
+     musX Brand
   =============================== */
 
-  --accent: #ff8c42;
+  --primary: #56A276;
 
-  --accent-soft: rgba(255,140,66,.15);
+  --primary-hover: #68B988;
+
+  --primary-active: #458A63;
+
+  --primary-soft: rgba(86,162,118,.14);
 
   /* ===============================
-      Status
+     Accent
   =============================== */
 
-  --success: #34d399;
+  --secondary: #7EE6A4;
 
-  --warning: #fbbf24;
-
-  --danger: #ef4444;
+  --accent: #9CF2BC;
 
   /* ===============================
-      Radius
+     Status
   =============================== */
 
-  --radius-sm: 10px;
+  --success: #4ADE80;
 
-  --radius-md: 16px;
+  --warning: #FBBF24;
 
-  --radius-lg: 22px;
-
-  --radius-xl: 30px;
+  --danger: #EF4444;
 
   /* ===============================
-      Shadows
+     Radius
   =============================== */
 
-  --shadow-xs: 0 2px 5px rgba(0,0,0,.04);
+  --radius-sm: 12px;
 
-  --shadow-sm: 0 8px 18px rgba(0,0,0,.06);
+  --radius-md: 18px;
 
-  --shadow-md: 0 14px 32px rgba(0,0,0,.08);
+  --radius-lg: 24px;
 
-  --shadow-lg: 0 22px 55px rgba(0,0,0,.12);
+  --radius-xl: 32px;
 
   /* ===============================
-      Layout
+     Premium Neumorphism
+  =============================== */
+
+  --shadow-xs:
+      4px 4px 8px rgba(0,0,0,.18);
+
+  --shadow-sm:
+      8px 8px 18px rgba(0,0,0,.28),
+      -4px -4px 10px rgba(255,255,255,.02);
+
+  --shadow-md:
+      14px 14px 30px rgba(0,0,0,.38),
+      -8px -8px 18px rgba(255,255,255,.025);
+
+  --shadow-lg:
+      20px 20px 44px rgba(0,0,0,.45),
+      -10px -10px 22px rgba(255,255,255,.03);
+
+  --shadow-inset:
+      inset 2px 2px 6px rgba(255,255,255,.025),
+      inset -4px -4px 10px rgba(0,0,0,.45);
+
+  /* ===============================
+     Layout
   =============================== */
 
   --sidebar-width: 280px;
@@ -109,7 +118,7 @@
   --content-padding: 32px;
 
   /* ===============================
-      Animation
+     Animation
   =============================== */
 
   --transition-fast: .15s ease;
@@ -737,7 +746,7 @@ ol{
 }
 
 .sidebar-auth-card p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 
   color: var(--text-secondary);
 
@@ -762,7 +771,7 @@ ol{
 
   background: var(--primary);
 
-  color: #fff;
+  color: #000000;
 
   font-weight: 600;
 
@@ -772,6 +781,8 @@ ol{
     transform var(--transition-fast),
     box-shadow var(--transition-fast),
     background var(--transition-fast);
+
+    background-color: #8c9fbc;
 }
 
 .get-started-btn:hover {
@@ -950,112 +961,6 @@ ol{
 .sidebar-mobile-toggle.active span:nth-child(3){
     transform:rotate(-45deg);
 }
-
-/* Header Gradient */
-
-.sidebar-gradient{
-    position:absolute;
-    inset:0;
-
-    background:linear-gradient(
-        120deg,
-        rgba(255,59,48,.15),
-        rgba(99,102,241,.15),
-        rgba(0,212,255,.12)
-    );
-
-    background-size:300% 300%;
-
-    animation:gradientMove 8s linear infinite;
-}
-
-/* Equalizer */
-
-.sidebar-equalizer{
-    position:absolute;
-    inset:0;
-
-    display:flex;
-    justify-content:center;
-    align-items:flex-end;
-
-    gap:9px;
-
-    opacity:0.1;
-
-    z-index:1;
-}
-
-.eq-bar{
-    width:5px;
-    height:45px;
-
-    border-radius:20px;
-
-    background:#ff3b30;
-
-    animation:equalizer 1s ease-in-out infinite;
-}
-
-.eq-bar:nth-child(2){height:80px;}
-.eq-bar:nth-child(3){height:40px;}
-.eq-bar:nth-child(4){height:70px;}
-.eq-bar:nth-child(5){height:50px;}
-.eq-bar:nth-child(6){height:62px;}
-.eq-bar:nth-child(7){height:45px;}
-
-@keyframes equalizer{
-
-    0%,100%{
-        transform:scaleY(.35);
-    }
-
-    50%{
-        transform:scaleY(1);
-    }
-
-}
-
-@keyframes gradientMove{
-
-    0%{
-        background-position:0% 50%;
-    }
-
-    50%{
-        background-position:100% 50%;
-    }
-
-    100%{
-        background-position:0% 50%;
-    }
-
-}
-.sidebar-equalizer{
-    position:absolute;
-    inset:0;
-
-    display:flex;
-    justify-content:center;
-    align-items:flex-end;
-
-    gap:7px;
-
-    opacity:.08;
-
-    z-index:1;
-}
-
-.eq-bar{
-    width:5px;
-    height:45px;
-
-    border-radius:20px;
-
-    background:hsl(3, 100%, 51%);
-
-    animation:equalizer 1s ease-in-out infinite;
-} 
 
 
 .logo-x{
@@ -1543,5 +1448,835 @@ ol{
     padding-top:78px;
 
 }
+
+}
+
+
+/* ==========================================
+   LOGO CARD
+========================================== */
+
+.logo-card{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width: 100%;
+
+    height:165px;
+
+    padding:20px 18px;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #171D26,
+            #131922
+        );
+
+    border:1px solid rgba(255,255,255,.05);
+
+    box-shadow:
+        var(--shadow-md),
+        var(--shadow-inset);
+
+    transition:all .3s ease;
+}
+
+.logo-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        var(--shadow-lg),
+        0 0 18px rgba(56,177,60,.12);
+}
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+    user-select:none;
+}
+
+.logo-mus{
+
+    margin:0;
+
+    color:#F5F8FC;
+
+    font-size:2.3rem;
+
+    font-weight:800;
+
+    letter-spacing:-1px;
+}
+
+.logo-x{
+
+    margin-left:2px;
+
+    font-size:3.5rem;
+
+    line-height:1;
+
+    font-weight:900;
+
+    color:#38B13C;
+
+    text-shadow:
+        0 0 8px rgba(56,177,60,.45),
+        0 0 18px rgba(56,177,60,.22);
+
+    animation:logoGlow 3s ease-in-out infinite;
+}
+
+/* ==========================================
+   TAGLINE
+========================================== */
+
+.logo-tagline{
+
+    margin-top:10px;
+
+    color:#A5B0C0;
+
+    font-size:.82rem;
+
+    letter-spacing:1px;
+
+    font-weight:500;
+}
+
+/* ==========================================
+   EQUALIZER
+========================================== */
+
+.logo-eq{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+    gap:6px;
+
+    margin-top:18px;
+
+    height:40px;
+}
+
+.logo-bar{
+
+    width:5px;
+
+    border-radius:999px;
+
+    background:#38B13C;
+
+    box-shadow:
+        0 0 10px rgba(56,177,60,.35);
+
+    animation:equalizer 1.2s ease-in-out infinite;
+}
+
+.logo-bar:nth-child(1){
+
+    height:12px;
+
+    animation-delay:.1s;
+}
+
+.logo-bar:nth-child(2){
+
+    height:28px;
+
+    animation-delay:.25s;
+}
+
+.logo-bar:nth-child(3){
+
+    height:18px;
+
+    animation-delay:.45s;
+}
+
+.logo-bar:nth-child(4){
+
+    height:36px;
+
+    animation-delay:.2s;
+}
+
+.logo-bar:nth-child(5){
+
+    height:16px;
+
+    animation-delay:.55s;
+}
+
+.logo-bar:nth-child(6){
+
+    height:26px;
+
+    animation-delay:.3s;
+}
+
+.logo-bar:nth-child(7){
+
+    height:14px;
+
+    animation-delay:.15s;
+}
+
+/* ==========================================
+   BACKGROUND GLOW
+========================================== */
+
+.logo-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-80px;
+
+    right:-60px;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(56,177,60,.16),
+            transparent 70%
+        );
+
+    filter:blur(30px);
+
+    pointer-events:none;
+}
+
+.logo-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-70px;
+
+    left:-70px;
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(56,177,60,.08),
+            transparent 70%
+        );
+
+    filter:blur(30px);
+
+    pointer-events:none;
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes logoGlow{
+
+    0%,100%{
+
+        text-shadow:
+            0 0 8px rgba(56,177,60,.35),
+            0 0 18px rgba(56,177,60,.15);
+    }
+
+    50%{
+
+        text-shadow:
+            0 0 16px rgba(56,177,60,.65),
+            0 0 34px rgba(56,177,60,.30);
+    }
+
+}
+
+@keyframes equalizer{
+
+    0%,100%{
+
+        transform:scaleY(.55);
+    }
+
+    50%{
+
+        transform:scaleY(1.25);
+    }
+
+}/* ==========================================================
+   SIDEBAR LOGO
+========================================================== */
+
+.sidebar-logo{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:18px;
+
+    margin-bottom:18px;
+
+    height:auto;
+
+    min-height:unset;
+
+    background:none;
+
+    border:none;
+}
+
+/* ==========================================================
+   LOGO CARD
+========================================================== */
+
+
+/* ==========================================================
+   BACKGROUND GLOW
+========================================================== */
+
+.logo-glow{
+
+    position:absolute;
+
+    top:-60px;
+
+    right:-50px;
+
+    width:160px;
+
+    height:160px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            rgba(56,177,60,.18),
+
+            transparent 70%
+
+        );
+
+    filter:blur(35px);
+
+    animation:logoGlowMove 6s ease-in-out infinite alternate;
+
+}
+
+.logo-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-60px;
+
+    bottom:-60px;
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            rgba(56,177,60,.08),
+
+            transparent 70%
+
+        );
+
+    filter:blur(28px);
+
+}
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.logo{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.logo-mus{
+
+    font-size:3rem;
+
+    font-weight:900;
+
+    color:#FFFFFF;
+
+    letter-spacing:-2px;
+
+    line-height:1;
+
+}
+
+.logo-x{
+
+    margin-left:2px;
+
+    font-size:4rem;
+
+    line-height:.9;
+
+    font-weight:900;
+
+    color:#38B13C;
+
+    text-shadow:
+
+        0 0 10px rgba(56,177,60,.5),
+
+        0 0 20px rgba(56,177,60,.25);
+
+    animation:logoPulse 3s ease-in-out infinite;
+
+}
+
+/* ==========================================================
+   TAGLINE
+========================================================== */
+
+.logo-tagline{
+
+    margin-top:8px;
+
+    color:#A7B1C2;
+
+    font-size:.82rem;
+
+    font-weight:500;
+
+    letter-spacing:1px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ==========================================================
+   EQUALIZER
+========================================================== */
+
+.logo-eq{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+    gap:5px;
+
+    height:30px;
+
+    margin-top:16px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.logo-bar{
+
+    width:5px;
+
+    border-radius:999px;
+
+    background:#38B13C;
+
+    box-shadow:
+
+        0 0 10px rgba(56,177,60,.45);
+
+    transform-origin:bottom;
+
+    animation:equalizer 1.2s ease-in-out infinite;
+
+}
+
+.logo-bar:nth-child(1){
+
+    height:10px;
+
+    animation-delay:.1s;
+
+}
+
+.logo-bar:nth-child(2){
+
+    height:22px;
+
+    animation-delay:.25s;
+
+}
+
+.logo-bar:nth-child(3){
+
+    height:15px;
+
+    animation-delay:.45s;
+
+}
+
+.logo-bar:nth-child(4){
+
+    height:30px;
+
+    animation-delay:.15s;
+
+}
+
+.logo-bar:nth-child(5){
+
+    height:16px;
+
+    animation-delay:.55s;
+
+}
+
+.logo-bar:nth-child(6){
+
+    height:22px;
+
+    animation-delay:.3s;
+
+}
+
+.logo-bar:nth-child(7){
+
+    height:10px;
+
+    animation-delay:.1s;
+
+}
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes logoPulse{
+
+    0%,
+    100%{
+
+        text-shadow:
+
+            0 0 10px rgba(56,177,60,.35),
+
+            0 0 20px rgba(56,177,60,.18);
+
+    }
+
+    50%{
+
+        text-shadow:
+
+            0 0 18px rgba(56,177,60,.7),
+
+            0 0 36px rgba(56,177,60,.35);
+
+    }
+
+}
+
+@keyframes equalizer{
+
+    0%,
+    100%{
+
+        transform:scaleY(.45);
+
+    }
+
+    50%{
+
+        transform:scaleY(1.35);
+
+    }
+
+}
+
+@keyframes logoGlowMove{
+
+    0%{
+
+        transform:
+
+            translate(0,0)
+
+            scale(1);
+
+    }
+
+    100%{
+
+        transform:
+
+            translate(-12px,10px)
+
+            scale(1.15);
+
+    }
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:768px){
+
+    .logo-card{
+
+        width:190px;
+
+        height:140px;
+
+    }
+
+    .logo-mus{
+
+        font-size:2.6rem;
+
+    }
+
+    .logo-x{
+
+        font-size:3.4rem;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .logo-card{
+
+        width:170px;
+
+        height:125px;
+
+    }
+
+    .logo-mus{
+
+        font-size:2.3rem;
+
+    }
+
+    .logo-x{
+
+        font-size:3rem;
+
+    }
+
+    .logo-tagline{
+
+        font-size:.72rem;
+
+    }
+
+}/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:768px){
+
+    .sidebar-logo{
+
+        padding:18px 16px;
+    }
+
+    .logo-card{
+
+        width:100%;
+
+        max-width:230px;
+
+        height:150px;
+
+        margin:auto;
+    }
+
+    .logo-mus{
+
+        font-size:2.8rem;
+    }
+
+    .logo-x{
+
+        font-size:3.8rem;
+    }
+
+    .logo-tagline{
+
+        font-size:.8rem;
+    }
+
+    .logo-eq{
+
+        margin-top:14px;
+
+        height:28px;
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:480px){
+
+    .sidebar-logo{
+
+        padding:16px 14px;
+    }
+
+    .logo-card{
+
+        width:70%;
+
+        max-width:200px;
+
+        height:135px;
+
+        border-radius:22px;
+    }
+
+    .logo-mus{
+
+        font-size:2.4rem;
+    }
+
+    .logo-x{
+
+        font-size:3.2rem;
+    }
+
+    .logo-tagline{
+
+        margin-top:6px;
+
+        font-size:.72rem;
+    }
+
+    .logo-eq{
+
+        margin-top:10px;
+
+        height:22px;
+
+        gap:4px;
+    }
+
+    .logo-bar{
+
+        width:4px;
+    }
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:360px){
+
+    .logo-card{
+
+        max-width:300px;
+
+        height:140px;
+    }
+
+    .logo-mus{
+
+        font-size:2rem;
+    }
+
+    .logo-x{
+
+        font-size:2.8rem;
+    }
+
+    .logo-tagline{
+
+        font-size:.68rem;
+    }
+
+    .logo-eq{
+
+        height:18px;
+
+        gap:3px;
+    }
+
+    .logo-bar{
+
+        width:3px;
+    }
 
 }

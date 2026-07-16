@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import { ArrowRight, Bold } from "lucide-react";
 import type {
   Dispatch,
   SetStateAction,
@@ -169,62 +169,28 @@ export default function Sidebar({
 
           {/* Logo */}
 
-          <Link
-            href="/"
-            onClick={() =>
-              setMobileOpen(false)
-            }
-            style={{
-              position: "relative",
-              zIndex: 2,
-              textDecoration: "none",
-              textAlign: "center",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "baseline",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  fontSize: "2rem",
-                  fontWeight: 700,
-                  color: "#111827",
-                }}
-              >
-                mus
-              </h2>
+         <Link href="/" className="logo-card">
 
-              <h1
-                className="logo-x"
-                style={{
-                  margin: 0,
-                  marginLeft: "2px",
-                  fontSize: "3.2rem",
-                  lineHeight: 1,
-                  fontWeight: 900,
-                  color: "#38b13c",
-                }}
-              >
-                𝕏
-              </h1>
-            </div>
+    <div className="logo">
+        <span className="logo-mus">mus</span>
+        <span className="logo-x">𝕏</span>
+    </div>
 
-            <p
-              style={{
-                marginTop: "6px",
-                color: "#0f0f0f",
-                fontSize: ".78rem",
-                letterSpacing: ".6px",
-              }}
-            >
-              Feel Every Beat
-            </p>
-          </Link>
+    <p className="logo-tagline">
+        Feel Every Beat
+    </p>
+
+    <div className="logo-eq">
+        <span className="logo-bar"></span>
+        <span className="logo-bar"></span>
+        <span className="logo-bar"></span>
+        <span className="logo-bar"></span>
+        <span className="logo-bar"></span>
+        <span className="logo-bar"></span>
+        <span className="logo-bar"></span>
+    </div>
+
+</Link>
         </div>
 
         {/* ==========================================
@@ -314,21 +280,21 @@ export default function Sidebar({
 
               <div className="auth-content">
 
-                <h3>
-                  Welcome to mus𝕏
-                </h3>
+              
+       {/* <p>Welcome Back! to mus𝕏</p> */}
+       {/* <p>Discover millions of song curated just for you </p> */}
+              
 
-                <p>
-                  Discover millions of songs
-                  curated just for you.
-                </p>
+           <button
+  type="button"
+  className="get-started-btn"
+>
+  <span>Get Started</span>
 
-                <button
-                  type="button"
-                  className="get-started-btn"
-                >
-                  Get Started
-                </button>
+  <span className="btn-arrow">
+    <ArrowRight size={18} strokeWidth={2.5} />
+  </span>
+</button>
 
               </div>
 
