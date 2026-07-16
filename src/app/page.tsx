@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import Sidebar from "@/components/Sidebar/Sidebar";
+import BottomNav from "@/components/Sidebar/BottomNav";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/Hero";
 
@@ -26,6 +27,9 @@ export default function HomePage() {
 
         <Hero />
       </main>
+
+      {/* Mobile Bottom Navigation */}
+      <BottomNav />
     </div>
   );
 }

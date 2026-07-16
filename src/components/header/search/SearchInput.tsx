@@ -3,7 +3,6 @@
 import { Search } from "lucide-react";
 
 import { useSearch } from "../context";
-
 import { SEARCH_PLACEHOLDER } from "../constants/search.constants";
 
 export default function SearchInput() {
@@ -26,6 +25,7 @@ export default function SearchInput() {
       {/* Input */}
 
       <input
+        id="search-input"     // <-- Add this
         type="text"
         className="search-input"
         placeholder={SEARCH_PLACEHOLDER}

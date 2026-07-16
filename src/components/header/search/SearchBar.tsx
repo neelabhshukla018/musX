@@ -3,10 +3,12 @@
 import SearchInput from "./SearchInput";
 import VoiceSearchButton from "./VoiceSearchButton";
 
-
 export default function SearchBar() {
   return (
-    <div className="search-bar">
+    <div
+      id="search-section"
+      className="search-bar"
+    >
       {/* Search Input */}
 
       <div className="search-input-wrapper">
@@ -17,10 +19,6 @@ export default function SearchBar() {
 
       <div className="search-actions">
         <VoiceSearchButton />
-
-      
-
-       
       </div>
     </div>
   );
