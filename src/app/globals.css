@@ -9,98 +9,69 @@
   /* ===============================
      Backgrounds
   =============================== */
-
   --background: #090C11;
-
   --surface: #131922;
-
   --surface-secondary: #1A212C;
-
   --surface-hover: #222B38;
-
   --surface-elevated: #2A3442;
 
   /* ===============================
      Typography
   =============================== */
-
   --foreground: #F5F8FC;
-
   --text-primary: #F5F8FC;
-
   --text-secondary: #C3CBD8;
-
   --text-muted: #7E899A;
 
   /* ===============================
      Borders
   =============================== */
-
   --border: rgba(255,255,255,.08);
-
   --border-light: rgba(255,255,255,.03);
 
   /* ===============================
      musX Brand
   =============================== */
-
   --primary: #56A276;
-
   --primary-hover: #68B988;
-
   --primary-active: #458A63;
-
   --primary-soft: rgba(86,162,118,.14);
 
   /* ===============================
      Accent
   =============================== */
-
   --secondary: #7EE6A4;
-
   --accent: #9CF2BC;
 
   /* ===============================
      Status
   =============================== */
-
   --success: #4ADE80;
-
   --warning: #FBBF24;
-
   --danger: #EF4444;
 
   /* ===============================
      Radius
   =============================== */
-
   --radius-sm: 12px;
-
   --radius-md: 18px;
-
   --radius-lg: 24px;
-
   --radius-xl: 32px;
 
   /* ===============================
      Premium Neumorphism
   =============================== */
-
   --shadow-xs:
       4px 4px 8px rgba(0,0,0,.18);
-
   --shadow-sm:
       8px 8px 18px rgba(0,0,0,.28),
       -4px -4px 10px rgba(255,255,255,.02);
-
   --shadow-md:
       14px 14px 30px rgba(0,0,0,.38),
       -8px -8px 18px rgba(255,255,255,.025);
-
   --shadow-lg:
       20px 20px 44px rgba(0,0,0,.45),
       -10px -10px 22px rgba(255,255,255,.03);
-
   --shadow-inset:
       inset 2px 2px 6px rgba(255,255,255,.025),
       inset -4px -4px 10px rgba(0,0,0,.45);
@@ -108,30 +79,22 @@
   /* ===============================
      Layout
   =============================== */
-
   --sidebar-width: 280px;
-
   --header-height: 76px;
-
   --player-height: 92px;
-
   --content-padding: 32px;
 
   /* ===============================
      Animation
   =============================== */
-
   --transition-fast: .15s ease;
-
   --transition-normal: .25s ease;
-
   --transition-slow: .4s ease;
 }
 
 /* ==========================================================
    Reset
    ========================================================== */
-
 *,
 *::before,
 *::after{
@@ -146,44 +109,32 @@ html{
 }
 
 body{
-
   min-height:100vh;
-
   background:
-
     radial-gradient(
       circle at top left,
       rgba(86,162,118,.08),
       transparent 35%
     ),
-
     radial-gradient(
       circle at top right,
       rgba(79,140,255,.06),
       transparent 40%
     ),
-
     linear-gradient(
       180deg,
       #E9EDF3 0%,
       #DDE2EA 50%,
       #D4D9E1 100%
     );
-
   background-attachment:fixed;
-
   color:var(--foreground);
-
   overflow-x:hidden;
-
   text-rendering:optimizeLegibility;
-
   -webkit-font-smoothing:antialiased;
-
   transition:
     background var(--transition-normal),
     color var(--transition-normal);
-
 }
 
 img,
@@ -192,7 +143,6 @@ video,
 canvas,
 svg{
   display:block;
-
   max-width:100%;
 }
 
@@ -205,15 +155,12 @@ select{
 
 button{
   cursor:pointer;
-
   border:none;
-
   background:none;
 }
 
 a{
   color:inherit;
-
   text-decoration:none;
 }
 
@@ -225,17 +172,14 @@ ol{
 /* ==========================================================
    Selection
    ========================================================== */
-
 ::selection{
   background:var(--primary);
-
   color:white;
 }
 
 /* ==========================================================
    Scrollbar
    ========================================================== */
-
 ::-webkit-scrollbar{
   width:8px;
 }
@@ -246,7 +190,6 @@ ol{
 
 ::-webkit-scrollbar-thumb{
   background:var(--border);
-
   border-radius:999px;
 }
 
@@ -257,20 +200,16 @@ ol{
 /* ==========================================================
    Focus
    ========================================================== */
-
 :focus-visible{
   outline:2px solid var(--primary);
-
   outline-offset:2px;
 }
 
 /* ==========================================================
    Utilities
    ========================================================== */
-
 .glass{
   backdrop-filter:blur(18px);
-
   background:color-mix(in srgb,var(--surface) 82%,transparent);
 }
 
@@ -297,7 +236,6 @@ ol{
 /* ==========================================================
    App Layout
    ========================================================== */
-
 .app-layout {
   display: flex;
   min-height: 100vh;
@@ -306,9 +244,10 @@ ol{
 
 .main-content {
   flex: 1;
-  margin-left: var(--sidebar-width);
+  margin-left: 320px;
   min-height: 100vh;
   padding: var(--content-padding);
+  padding-top: 88px;
   background: var(--background);
   transition: margin-left var(--transition-normal);
 }
@@ -316,28 +255,19 @@ ol{
 /* ==========================================================
    Sidebar
    ========================================================== */
-
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-
   width: var(--sidebar-width);
   height: 100vh;
-
   display: flex;
   flex-direction: column;
-
   background: var(--surface);
-
   border-right: 1px solid var(--border);
-
   z-index: 1000;
-
   overflow: hidden;
-
   box-shadow: var(--shadow-sm);
-
   transition:
     transform var(--transition-normal),
     background var(--transition-normal),
@@ -345,56 +275,19 @@ ol{
 }
 
 /* ==========================================================
-   Mobile Toggle
+   Mobile Toggle / Close
    ========================================================== */
-
-.sidebar-mobile-toggle {
-  position: fixed;
-
-  top: 18px;
-  left: 18px;
-
-  width: 48px;
-  height: 48px;
-
-  display: none;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: var(--radius-md);
-
-  background: var(--surface);
-
-  color: var(--text-primary);
-
-  box-shadow: var(--shadow-sm);
-
-  z-index: 1200;
-
-  transition: all var(--transition-fast);
-}
-
-.sidebar-mobile-toggle:hover {
-  background: var(--surface-hover);
-}
-
 .sidebar-close {
   position: absolute;
-
   top: 18px;
   right: 18px;
-
   width: 42px;
   height: 42px;
-
   display: none;
   align-items: center;
   justify-content: center;
-
   border-radius: 12px;
-
   color: var(--text-primary);
-
   transition: all var(--transition-fast);
 }
 
@@ -405,17 +298,12 @@ ol{
 /* ==========================================================
    Overlay
    ========================================================== */
-
 .sidebar-overlay {
   position: fixed;
   inset: 0;
-
   background: rgba(0, 0, 0, 0.45);
-
   backdrop-filter: blur(4px);
-
   z-index: 999;
-
   animation: sidebarOverlay .25s ease;
 }
 
@@ -423,20 +311,14 @@ ol{
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
 }
 
 /* ==========================================================
-   Logo
+   Sidebar Logo Link
    ========================================================== */
-
-.sidebar-logo {
-  padding: 2rem 1.5rem;
-}
-
 .sidebar-logo-link {
   display: flex;
   align-items: center;
@@ -446,22 +328,15 @@ ol{
 .sidebar-logo-icon {
   width: 56px;
   height: 56px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: var(--radius-md);
-
   background: var(--primary);
-
   color: #fff;
-
   font-size: 1.6rem;
   font-weight: 700;
-
   box-shadow: var(--shadow-md);
-
   transition:
     transform var(--transition-normal),
     box-shadow var(--transition-normal);
@@ -479,36 +354,26 @@ ol{
 .sidebar-logo-text h1 {
   font-size: 1.6rem;
   font-weight: 700;
-
   color: var(--text-primary);
-
   line-height: 1;
 }
 
 .sidebar-logo-text p {
   margin-top: 4px;
-
   font-size: .82rem;
-
   color: var(--text-secondary);
 }
 
 /* ==========================================================
    Sidebar Navigation
    ========================================================== */
-
 .sidebar-nav {
   flex: 1;
-
   display: flex;
   flex-direction: column;
-
   gap: 6px;
-
   padding: 0 1rem 1rem;
-
   overflow-y: auto;
-
   overflow-x: hidden;
 }
 
@@ -532,22 +397,15 @@ ol{
 /* ==========================================================
    Navigation Link
    ========================================================== */
-
 .sidebar-link {
   position: relative;
-
   display: flex;
   align-items: center;
   gap: 14px;
-
   width: 100%;
-
   padding: 14px 16px;
-
   border-radius: var(--radius-md);
-
   color: var(--text-secondary);
-
   transition:
     background var(--transition-fast),
     color var(--transition-fast),
@@ -558,32 +416,23 @@ ol{
 .sidebar-link-icon {
   width: 24px;
   height: 24px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
-
   transition: transform var(--transition-fast);
 }
 
 .sidebar-link-title {
   font-size: .95rem;
   font-weight: 500;
-
   white-space: nowrap;
 }
 
-/* ==========================================================
-   Hover
-   ========================================================== */
-
+/* Hover */
 .sidebar-link:hover {
   background: var(--surface-hover);
-
   color: var(--text-primary);
-
   transform: translateX(4px);
 }
 
@@ -591,15 +440,10 @@ ol{
   transform: scale(1.1);
 }
 
-/* ==========================================================
-   Active Link
-   ========================================================== */
-
+/* Active Link */
 .sidebar-link.active {
   background: var(--primary);
-
   color: #fff;
-
   box-shadow: var(--shadow-sm);
 }
 
@@ -610,49 +454,31 @@ ol{
 
 .sidebar-link.active::before {
   content: "";
-
   position: absolute;
-
   left: -12px;
   top: 50%;
-
   transform: translateY(-50%);
-
   width: 4px;
   height: 30px;
-
   border-radius: 999px;
-
   background: var(--primary);
 }
 
-/* ==========================================================
-   Focus
-   ========================================================== */
-
+/* Focus */
 .sidebar-link:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
-/* ==========================================================
-   Divider
-   ========================================================== */
-
+/* Divider */
 .sidebar-divider {
   width: calc(100% - 2rem);
-
   margin: 1rem auto;
-
   border: none;
-
   border-top: 1px solid var(--border);
 }
 
-/* ==========================================================
-   Navigation Animation
-   ========================================================== */
-
+/* Navigation Animation */
 .sidebar-link svg {
   transition:
     transform var(--transition-fast),
@@ -666,64 +492,48 @@ ol{
 /* ==========================================================
    Small Laptop
    ========================================================== */
-
 @media (max-width: 1200px) {
-
   .sidebar-link {
     padding: 13px 14px;
   }
-
   .sidebar-link-title {
     font-size: .92rem;
   }
-
 }
 
 /* ==========================================================
    Tablet
    ========================================================== */
-
 @media (max-width: 992px) {
-
   .sidebar-nav {
     padding: 0 .9rem 1rem;
   }
-
   .sidebar-link {
     padding: 15px 16px;
   }
-
   .sidebar-link-title {
     font-size: .95rem;
   }
+}
 
-}/* ==========================================================
+/* ==========================================================
    Sidebar Bottom
 ========================================================== */
-
 .sidebar-bottom {
   margin-top: auto;
-
   padding: 1.25rem;
-
   border-top: 1px solid var(--border);
-
   background: var(--surface);
 }
 
 /* ==========================================================
    Authentication Card
 ========================================================== */
-
 .sidebar-auth-card {
   padding: 1.4rem;
-
   border-radius: var(--radius-lg);
-
   background: var(--surface-elevated);
-
   box-shadow: var(--shadow-sm);
-
   transition:
     transform var(--transition-normal),
     box-shadow var(--transition-normal);
@@ -731,65 +541,47 @@ ol{
 
 .sidebar-auth-card:hover {
   transform: translateY(-3px);
-
   box-shadow: var(--shadow-md);
 }
 
 .sidebar-auth-card h3 {
   margin-bottom: .75rem;
-
   color: var(--text-primary);
-
   font-size: 1.1rem;
-
   font-weight: 700;
 }
 
 .sidebar-auth-card p {
   margin-bottom: 1.2rem;
-
   color: var(--text-secondary);
-
   font-size: .9rem;
-
   line-height: 1.6;
 }
 
 /* ==========================================================
    Get Started Button
 ========================================================== */
-
 .get-started-btn {
   width: 100%;
   height: 52px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: var(--radius-md);
-
   background: var(--primary);
-
   color: #000000;
-
   font-weight: 600;
-
   box-shadow: var(--shadow-sm);
-
   transition:
     transform var(--transition-fast),
     box-shadow var(--transition-fast),
     background var(--transition-fast);
-
-    background-color: #8c9fbc;
+  background-color: #8c9fbc;
 }
 
 .get-started-btn:hover {
   background: var(--primary-hover);
-
   transform: translateY(-2px);
-
   box-shadow: var(--shadow-md);
 }
 
@@ -800,20 +592,14 @@ ol{
 /* ==========================================================
    User Card
 ========================================================== */
-
 .sidebar-user-card {
   display: flex;
   align-items: center;
   gap: 14px;
-
   padding: 14px;
-
   border-radius: var(--radius-lg);
-
   background: var(--surface-elevated);
-
   box-shadow: var(--shadow-sm);
-
   transition:
     transform var(--transition-fast),
     box-shadow var(--transition-fast);
@@ -821,79 +607,57 @@ ol{
 
 .sidebar-user-card:hover {
   transform: translateY(-2px);
-
   box-shadow: var(--shadow-md);
 }
 
 /* Avatar */
-
 .sidebar-user-avatar {
   position: relative;
-
   width: 56px;
   height: 56px;
-
   flex-shrink: 0;
 }
 
 .sidebar-user-avatar img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   border-radius: 50%;
 }
 
 .sidebar-user-avatar::after {
   content: "";
-
   position: absolute;
-
   right: 2px;
   bottom: 2px;
-
   width: 12px;
   height: 12px;
-
   border-radius: 50%;
-
   background: var(--success);
-
   border: 2px solid var(--surface);
 }
 
 /* User Details */
-
 .sidebar-user-details {
   flex: 1;
-
   min-width: 0;
 }
 
 .sidebar-user-details h4 {
   overflow: hidden;
-
   white-space: nowrap;
-
   text-overflow: ellipsis;
-
   color: var(--text-primary);
-
   font-size: .95rem;
-
   font-weight: 600;
 }
 
 .sidebar-user-details p {
   margin-top: .35rem;
-
   display: flex;
   align-items: center;
   gap: 6px;
-
   color: var(--text-secondary);
-
   font-size: .82rem;
 }
 
@@ -901,40 +665,32 @@ ol{
   flex-shrink: 0;
 }
 
+/* ==========================================================
+   Mobile Toggle (hamburger)
+========================================================== */
 .sidebar-mobile-toggle{
     position:fixed;
     top:20px;
     left:20px;
-
     width:52px;
     height:52px;
-
     display:none;
     justify-content:center;
     align-items:center;
-
     border:none;
     border-radius:16px;
-
     cursor:pointer;
-
     background:var(--card-bg);
-
     box-shadow:0 10px 30px rgba(0,0,0,.12);
-
     z-index:2001;
 }
 
 .sidebar-mobile-toggle span{
     position:absolute;
-
     width:24px;
     height:2.5px;
-
     border-radius:999px;
-
     background:#215514be;
-
     transition:.35s ease;
 }
 
@@ -962,179 +718,75 @@ ol{
     transform:rotate(-45deg);
 }
 
-
-.logo-x{
-    display:inline-block;
-
-    transform-origin:center;
-
-    text-shadow:
-        0 0 8px rgba(56,177,60,.5),
-        0 0 18px rgba(56,177,60,.6),
-        0 0 35px rgba(56,177,60,.45);
-
-    animation:logoBounce 3s ease-in-out infinite;
-}
-
-@keyframes logoBounce{
-
-    /* Normal */
-
-    0%{
-        transform:
-            translateY(0)
-            scale(1)
-            rotate(0deg);
-    }
-
-    /* Drop */
-
-    10%{
-        transform:
-            translateY(14px)
-            scale(.92,1.08)
-            rotate(-6deg);
-    }
-
-    /* Bounce Up */
-
-    20%{
-        transform:
-            translateY(-10px)
-            scale(1.08,.94)
-            rotate(5deg);
-    }
-
-    /* Small Bounce */
-
-    30%{
-        transform:
-            translateY(4px)
-            scale(.98,1.02)
-            rotate(-2deg);
-    }
-
-    /* Settle */
-
-    35%{
-        transform:
-            translateY(0)
-            scale(1)
-            rotate(0deg);
-
-        text-shadow:
-            0 0 14px rgba(56,177,60,.9),
-            0 0 28px rgba(56,177,60,.8),
-            0 0 50px rgba(56,177,60,.6);
-    }
-
-    /* Stay Still */
-
-    100%{
-        transform:
-            translateY(0)
-            scale(1)
-            rotate(0deg);
-
-        text-shadow:
-            0 0 8px rgba(56,177,60,.5),
-            0 0 18px rgba(56,177,60,.6),
-            0 0 35px rgba(56,177,60,.45);
-    }
-
-}
-
 /* ==========================================================
    Responsive
 ========================================================== */
-
 @media (max-width: 992px) {
-
   .sidebar {
     transform: translateX(-100%);
   }
-
   .sidebar.sidebar-open {
     transform: translateX(0);
   }
-
   .sidebar-mobile-toggle {
     display: flex;
   }
-
   .sidebar-close {
     display: flex;
   }
-
   .main-content {
     margin-left: 0;
-
     padding-top: 90px;
   }
-
 }
 
 @media (max-width: 768px) {
-
   .sidebar {
     width: 300px;
   }
-
   .sidebar-bottom {
     padding: 1rem;
   }
-
 }
 
 @media (max-width: 480px) {
-
   .sidebar {
     width: 100%;
   }
-
   .sidebar-logo {
     padding-top: 5rem;
   }
-
   .sidebar-user-avatar {
     width: 50px;
     height: 50px;
   }
-
   .sidebar-user-details h4 {
     font-size: .9rem;
   }
-
   .sidebar-user-details p {
     font-size: .78rem;
   }
-
 }
 
 /* ==========================================================
    Sidebar Animation
 ========================================================== */
-
 .sidebar {
   animation: sidebarFade .35s ease;
 }
 
 @keyframes sidebarFade {
-
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
-
 }
 
 /* ==========================================================
    Dark Theme Adjustments
 ========================================================== */
-
 .dark .sidebar {
   background: var(--surface);
 }
@@ -1148,264 +800,107 @@ ol{
   background: var(--surface-elevated);
 }
 
-
 /* ==========================================================
    AUTH CARD
 ========================================================== */
-
 .sidebar-auth-card{
-
     position:relative;
-
     overflow:hidden;
-
     isolation:isolate;
-
     border-radius:22px;
 }
 
-/* ==========================================================
-   CONTENT
-========================================================== */
-
+/* CONTENT */
 .auth-content{
-
     position:relative;
-
     z-index:5;
 }
 
-/* ==========================================================
-   BACKGROUND
-========================================================== */
-
+/* BACKGROUND */
 .auth-bg{
-
     position:absolute;
-
     inset:0;
-
     z-index:0;
-
     pointer-events:none;
-
     overflow:hidden;
 }
 
-/* ==========================================================
-   GLOW
-========================================================== */
-
+/* GLOW */
 .auth-gradient{
-
     position:absolute;
-
     inset:-40%;
-
     background:
         radial-gradient(
             circle,
             rgba(34,197,94,.18),
             transparent 70%
         );
-
     animation:rotateGlow 18s linear infinite;
 }
 
-/* ==========================================================
-   EQUALIZER
-========================================================== */
-
+/* EQUALIZER */
 .auth-equalizer{
-
     position:absolute;
-
     left:50%;
-
     bottom:12px;
-
     transform:translateX(-50%);
-
     display:flex;
-
     gap:4px;
-
     opacity:.15;
-
     z-index:1;
 }
 
 .auth-equalizer span{
-
     width:4px;
-
     border-radius:30px;
-
     background:#22c55e;
-
     transform-origin:bottom;
-
     animation:bars .9s ease-in-out infinite;
 }
 
-.auth-equalizer span:nth-child(1){
-    height:16px;
-}
+.auth-equalizer span:nth-child(1){ height:16px; }
+.auth-equalizer span:nth-child(2){ height:24px; animation-delay:.1s; }
+.auth-equalizer span:nth-child(3){ height:14px; animation-delay:.2s; }
+.auth-equalizer span:nth-child(4){ height:28px; animation-delay:.3s; }
+.auth-equalizer span:nth-child(5){ height:18px; animation-delay:.4s; }
+.auth-equalizer span:nth-child(6){ height:24px; animation-delay:.5s; }
+.auth-equalizer span:nth-child(7){ height:16px; animation-delay:.6s; }
 
-.auth-equalizer span:nth-child(2){
-    height:24px;
-    animation-delay:.1s;
-}
-
-.auth-equalizer span:nth-child(3){
-    height:14px;
-    animation-delay:.2s;
-}
-
-.auth-equalizer span:nth-child(4){
-    height:28px;
-    animation-delay:.3s;
-}
-
-.auth-equalizer span:nth-child(5){
-    height:18px;
-    animation-delay:.4s;
-}
-
-.auth-equalizer span:nth-child(6){
-    height:24px;
-    animation-delay:.5s;
-}
-
-.auth-equalizer span:nth-child(7){
-    height:16px;
-    animation-delay:.6s;
-}
-
-/* ==========================================================
-   MUSIC NOTES
-========================================================== */
-
+/* MUSIC NOTES */
 .auth-notes{
-
     position:absolute;
-
     inset:0;
-
     z-index:1;
 }
 
 .auth-notes span{
-
     position:absolute;
-
     color:#22c55e;
-
     opacity:.12;
-
     font-size:26px;
-
     animation:floatNote 9s linear infinite;
 }
 
-.auth-notes span:nth-child(1){
+.auth-notes span:nth-child(1){ left:10%; bottom:-20px; }
+.auth-notes span:nth-child(2){ left:38%; bottom:-40px; animation-delay:2s; }
+.auth-notes span:nth-child(3){ right:18%; bottom:-25px; animation-delay:4s; }
+.auth-notes span:nth-child(4){ right:8%; bottom:-35px; animation-delay:6s; }
 
-    left:10%;
-    bottom:-20px;
-
-}
-
-.auth-notes span:nth-child(2){
-
-    left:38%;
-    bottom:-40px;
-
-    animation-delay:2s;
-
-}
-
-.auth-notes span:nth-child(3){
-
-    right:18%;
-    bottom:-25px;
-
-    animation-delay:4s;
-
-}
-
-.auth-notes span:nth-child(4){
-
-    right:8%;
-    bottom:-35px;
-
-    animation-delay:6s;
-
-}
-
-/* ==========================================================
-   ANIMATIONS
-========================================================== */
-
+/* ANIMATIONS */
 @keyframes bars{
-
-    0%,100%{
-
-        transform:scaleY(.35);
-
-    }
-
-    50%{
-
-        transform:scaleY(1);
-
-    }
-
+    0%,100%{ transform:scaleY(.35); }
+    50%{ transform:scaleY(1); }
 }
 
 @keyframes floatNote{
-
-    0%{
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-        opacity:0;
-
-    }
-
-    20%{
-
-        opacity:.12;
-
-    }
-
-    100%{
-
-        transform:
-            translateY(-180px)
-            rotate(25deg);
-
-        opacity:0;
-
-    }
-
+    0%{ transform:translateY(0) rotate(0deg); opacity:0; }
+    20%{ opacity:.12; }
+    100%{ transform:translateY(-180px) rotate(25deg); opacity:0; }
 }
 
 @keyframes rotateGlow{
-
-    from{
-
-        transform:rotate(0deg);
-
-    }
-
-    to{
-
-        transform:rotate(360deg);
-
-    }
-
+    from{ transform:rotate(0deg); }
+    to{ transform:rotate(360deg); }
 }
 
 .header-menu-button {
@@ -1417,866 +912,292 @@ ol{
         display: flex;
     }
 }
-@media (max-width:768px){
-
-.sidebar{
-
-    top:84px;
-
-    height:calc(100vh - 84px);
-
-}
-
-}/* Desktop */
-
-.main-content{
-
-    margin-left:320px;
-
-    padding-top:88px;
-
-}
-
-/* Mobile */
 
 @media (max-width:768px){
-
-.main-content{
-
-    margin-left:0;
-
-    padding-top:78px;
-
+    .sidebar{
+        top:84px;
+        height:calc(100vh - 84px);
+    }
 }
-
-}
-
 
 /* ==========================================
    LOGO CARD
 ========================================== */
-
 .logo-card{
-
     position:relative;
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
-
     align-items:center;
-
     width: 100%;
-
     height:165px;
-
     padding:20px 18px;
-
     overflow:hidden;
-
     border-radius:24px;
-
     background:
         linear-gradient(
             180deg,
             #171D26,
             #131922
         );
-
     border:1px solid rgba(255,255,255,.05);
-
     box-shadow:
         var(--shadow-md),
         var(--shadow-inset);
-
     transition:all .3s ease;
 }
 
 .logo-card:hover{
-
     transform:translateY(-3px);
-
     box-shadow:
         var(--shadow-lg),
         0 0 18px rgba(56,177,60,.12);
 }
-/* ==========================================
-   LOGO
-========================================== */
 
-.logo{
-
-    display:flex;
-
-    align-items:flex-end;
-
-    justify-content:center;
-
-    user-select:none;
-}
-
-.logo-mus{
-
-    margin:0;
-
-    color:#F5F8FC;
-
-    font-size:2.3rem;
-
-    font-weight:800;
-
-    letter-spacing:-1px;
-}
-
-.logo-x{
-
-    margin-left:2px;
-
-    font-size:3.5rem;
-
-    line-height:1;
-
-    font-weight:900;
-
-    color:#38B13C;
-
-    text-shadow:
-        0 0 8px rgba(56,177,60,.45),
-        0 0 18px rgba(56,177,60,.22);
-
-    animation:logoGlow 3s ease-in-out infinite;
-}
-
-/* ==========================================
-   TAGLINE
-========================================== */
-
-.logo-tagline{
-
-    margin-top:10px;
-
-    color:#A5B0C0;
-
-    font-size:.82rem;
-
-    letter-spacing:1px;
-
-    font-weight:500;
-}
-
-/* ==========================================
-   EQUALIZER
-========================================== */
-
-.logo-eq{
-
-    display:flex;
-
-    align-items:flex-end;
-
-    justify-content:center;
-
-    gap:6px;
-
-    margin-top:18px;
-
-    height:40px;
-}
-
-.logo-bar{
-
-    width:5px;
-
-    border-radius:999px;
-
-    background:#38B13C;
-
-    box-shadow:
-        0 0 10px rgba(56,177,60,.35);
-
-    animation:equalizer 1.2s ease-in-out infinite;
-}
-
-.logo-bar:nth-child(1){
-
-    height:12px;
-
-    animation-delay:.1s;
-}
-
-.logo-bar:nth-child(2){
-
-    height:28px;
-
-    animation-delay:.25s;
-}
-
-.logo-bar:nth-child(3){
-
-    height:18px;
-
-    animation-delay:.45s;
-}
-
-.logo-bar:nth-child(4){
-
-    height:36px;
-
-    animation-delay:.2s;
-}
-
-.logo-bar:nth-child(5){
-
-    height:16px;
-
-    animation-delay:.55s;
-}
-
-.logo-bar:nth-child(6){
-
-    height:26px;
-
-    animation-delay:.3s;
-}
-
-.logo-bar:nth-child(7){
-
-    height:14px;
-
-    animation-delay:.15s;
-}
-
-/* ==========================================
-   BACKGROUND GLOW
-========================================== */
-
+/* BACKGROUND GLOW (front glow) */
 .logo-card::before{
-
     content:"";
-
     position:absolute;
-
     top:-80px;
-
     right:-60px;
-
     width:180px;
-
     height:180px;
-
     border-radius:50%;
-
     background:
-
         radial-gradient(
             circle,
             rgba(56,177,60,.16),
             transparent 70%
         );
-
     filter:blur(30px);
-
     pointer-events:none;
 }
 
-.logo-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    bottom:-70px;
-
-    left:-70px;
-
-    width:170px;
-
-    height:170px;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(56,177,60,.08),
-            transparent 70%
-        );
-
-    filter:blur(30px);
-
-    pointer-events:none;
-}
-
-/* ==========================================
-   ANIMATIONS
-========================================== */
-
-@keyframes logoGlow{
-
-    0%,100%{
-
-        text-shadow:
-            0 0 8px rgba(56,177,60,.35),
-            0 0 18px rgba(56,177,60,.15);
-    }
-
-    50%{
-
-        text-shadow:
-            0 0 16px rgba(56,177,60,.65),
-            0 0 34px rgba(56,177,60,.30);
-    }
-
-}
-
-@keyframes equalizer{
-
-    0%,100%{
-
-        transform:scaleY(.55);
-    }
-
-    50%{
-
-        transform:scaleY(1.25);
-    }
-
-}/* ==========================================================
+/* ==========================================================
    SIDEBAR LOGO
 ========================================================== */
-
 .sidebar-logo{
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     padding:18px;
-
     margin-bottom:18px;
-
     height:auto;
-
     min-height:unset;
-
     background:none;
-
     border:none;
 }
 
-/* ==========================================================
-   LOGO CARD
-========================================================== */
-
-
-/* ==========================================================
-   BACKGROUND GLOW
-========================================================== */
-
+/* BACKGROUND GLOW */
 .logo-glow{
-
     position:absolute;
-
     top:-60px;
-
     right:-50px;
-
     width:160px;
-
     height:160px;
-
     border-radius:50%;
-
     background:
-
         radial-gradient(
-
             rgba(56,177,60,.18),
-
             transparent 70%
-
         );
-
     filter:blur(35px);
-
     animation:logoGlowMove 6s ease-in-out infinite alternate;
-
 }
 
 .logo-card::after{
-
     content:"";
-
     position:absolute;
-
     left:-60px;
-
     bottom:-60px;
-
     width:140px;
-
     height:140px;
-
     border-radius:50%;
-
     background:
-
         radial-gradient(
-
             rgba(56,177,60,.08),
-
             transparent 70%
-
         );
-
     filter:blur(28px);
-
 }
 
-/* ==========================================================
-   LOGO
-========================================================== */
-
+/* LOGO */
 .logo{
-
     display:flex;
-
     align-items:flex-end;
-
     justify-content:center;
-
     position:relative;
-
     z-index:2;
-
 }
 
 .logo-mus{
-
     font-size:3rem;
-
     font-weight:900;
-
     color:#FFFFFF;
-
     letter-spacing:-2px;
-
     line-height:1;
-
 }
 
 .logo-x{
-
     margin-left:2px;
-
     font-size:4rem;
-
     line-height:.9;
-
     font-weight:900;
-
     color:#38B13C;
-
     text-shadow:
-
         0 0 10px rgba(56,177,60,.5),
-
         0 0 20px rgba(56,177,60,.25);
-
     animation:logoPulse 3s ease-in-out infinite;
-
 }
 
-/* ==========================================================
-   TAGLINE
-========================================================== */
-
+/* TAGLINE */
 .logo-tagline{
-
     margin-top:8px;
-
     color:#A7B1C2;
-
     font-size:.82rem;
-
     font-weight:500;
-
     letter-spacing:1px;
-
     position:relative;
-
     z-index:2;
-
 }
 
-/* ==========================================================
-   EQUALIZER
-========================================================== */
-
+/* EQUALIZER */
 .logo-eq{
-
     display:flex;
-
     align-items:flex-end;
-
     justify-content:center;
-
     gap:5px;
-
     height:30px;
-
     margin-top:16px;
-
     position:relative;
-
     z-index:2;
-
 }
 
 .logo-bar{
-
     width:5px;
-
     border-radius:999px;
-
     background:#38B13C;
-
     box-shadow:
-
         0 0 10px rgba(56,177,60,.45);
-
     transform-origin:bottom;
-
     animation:equalizer 1.2s ease-in-out infinite;
-
 }
 
-.logo-bar:nth-child(1){
+.logo-bar:nth-child(1){ height:10px; animation-delay:.1s; }
+.logo-bar:nth-child(2){ height:22px; animation-delay:.25s; }
+.logo-bar:nth-child(3){ height:15px; animation-delay:.45s; }
+.logo-bar:nth-child(4){ height:30px; animation-delay:.15s; }
+.logo-bar:nth-child(5){ height:16px; animation-delay:.55s; }
+.logo-bar:nth-child(6){ height:22px; animation-delay:.3s; }
+.logo-bar:nth-child(7){ height:10px; animation-delay:.1s; }
 
-    height:10px;
-
-    animation-delay:.1s;
-
-}
-
-.logo-bar:nth-child(2){
-
-    height:22px;
-
-    animation-delay:.25s;
-
-}
-
-.logo-bar:nth-child(3){
-
-    height:15px;
-
-    animation-delay:.45s;
-
-}
-
-.logo-bar:nth-child(4){
-
-    height:30px;
-
-    animation-delay:.15s;
-
-}
-
-.logo-bar:nth-child(5){
-
-    height:16px;
-
-    animation-delay:.55s;
-
-}
-
-.logo-bar:nth-child(6){
-
-    height:22px;
-
-    animation-delay:.3s;
-
-}
-
-.logo-bar:nth-child(7){
-
-    height:10px;
-
-    animation-delay:.1s;
-
-}
-
-/* ==========================================================
-   ANIMATIONS
-========================================================== */
-
+/* ANIMATIONS */
 @keyframes logoPulse{
-
-    0%,
-    100%{
-
+    0%,100%{
         text-shadow:
-
             0 0 10px rgba(56,177,60,.35),
-
             0 0 20px rgba(56,177,60,.18);
-
     }
-
     50%{
-
         text-shadow:
-
             0 0 18px rgba(56,177,60,.7),
-
             0 0 36px rgba(56,177,60,.35);
-
     }
-
 }
 
 @keyframes equalizer{
-
-    0%,
-    100%{
-
-        transform:scaleY(.45);
-
-    }
-
-    50%{
-
-        transform:scaleY(1.35);
-
-    }
-
+    0%,100%{ transform:scaleY(.45); }
+    50%{ transform:scaleY(1.35); }
 }
 
 @keyframes logoGlowMove{
-
-    0%{
-
-        transform:
-
-            translate(0,0)
-
-            scale(1);
-
-    }
-
-    100%{
-
-        transform:
-
-            translate(-12px,10px)
-
-            scale(1.15);
-
-    }
-
+    0%{ transform:translate(0,0) scale(1); }
+    100%{ transform:translate(-12px,10px) scale(1.15); }
 }
 
 /* ==========================================================
-   RESPONSIVE
+   RESPONSIVE — TABLET
 ========================================================== */
-
 @media (max-width:768px){
-
-    .logo-card{
-
-        width:190px;
-
-        height:140px;
-
-    }
-
-    .logo-mus{
-
-        font-size:2.6rem;
-
-    }
-
-    .logo-x{
-
-        font-size:3.4rem;
-
-    }
-
-}
-
-@media (max-width:480px){
-
-    .logo-card{
-
-        width:170px;
-
-        height:125px;
-
-    }
-
-    .logo-mus{
-
-        font-size:2.3rem;
-
-    }
-
-    .logo-x{
-
-        font-size:3rem;
-
-    }
-
-    .logo-tagline{
-
-        font-size:.72rem;
-
-    }
-
-}/* ==========================================================
-   TABLET
-========================================================== */
-
-@media (max-width:768px){
-
     .sidebar-logo{
-
         padding:18px 16px;
     }
-
     .logo-card{
-
         width:100%;
-
         max-width:230px;
-
         height:150px;
-
         margin:auto;
     }
-
     .logo-mus{
-
         font-size:2.8rem;
     }
-
     .logo-x{
-
         font-size:3.8rem;
     }
-
     .logo-tagline{
-
         font-size:.8rem;
     }
-
     .logo-eq{
-
         margin-top:14px;
-
         height:28px;
     }
-
 }
 
 /* ==========================================================
-   MOBILE
+   RESPONSIVE — MOBILE
 ========================================================== */
-
 @media (max-width:480px){
-
     .sidebar-logo{
-
         padding:16px 14px;
     }
-
     .logo-card{
-
         width:70%;
-
         max-width:200px;
-
         height:135px;
-
         border-radius:22px;
     }
-
     .logo-mus{
-
         font-size:2.4rem;
     }
-
     .logo-x{
-
         font-size:3.2rem;
     }
-
     .logo-tagline{
-
         margin-top:6px;
-
         font-size:.72rem;
     }
-
     .logo-eq{
-
         margin-top:10px;
-
         height:22px;
-
         gap:4px;
     }
-
     .logo-bar{
-
         width:4px;
     }
-
 }
 
 /* ==========================================================
-   SMALL MOBILE
+   RESPONSIVE — SMALL MOBILE
 ========================================================== */
-
 @media (max-width:360px){
-
     .logo-card{
-
         max-width:300px;
-
         height:140px;
     }
-
     .logo-mus{
-
         font-size:2rem;
     }
-
     .logo-x{
-
         font-size:2.8rem;
     }
-
     .logo-tagline{
-
         font-size:.68rem;
     }
-
     .logo-eq{
-
         height:18px;
-
         gap:3px;
     }
-
     .logo-bar{
-
         width:3px;
     }
-
 }
